@@ -1,0 +1,14 @@
+node_modules
+
+*.log
+npm-debug.log*
+
+# Istanbul
+coverage
+
+# Local database
+.db
+
+# Otto stuff
+.otto
+

@@ -1,0 +1,60 @@
+{
+  "name": "simple-music-recommendations",
+  "version": "0.0.1",
+  "description": "'Simple music recommendation system based on what you play and people you follow'",
+  "scripts": {
+    "setup": "npm install && npm run db:setup && npm db:load",
+    "db:create": "rm -rf .db && mkdir -p .db",
+    "db:setup": "npm run db:test:setup && npm run db:production:setup",
+    "db:run": "mongod --dbpath=./.db --port 27017",
+    "db:production:setup": "mongo smr --eval \"db.users.ensureIndex({ username: 1 }, { unique: true })\"",
+    "db:production:load": "node bin/data-load/index.js",
+    "db:production:drop": "mongo smr --eval \"db.dropDatabase()\"",
+    "db:test:setup": "mongo smrTest --eval \"db.users.ensureIndex({ username: 1 }, { unique: true })\"",
+    "db:test:load": "NODE_ENV=test node bin/data-load/index.js",
+    "db:test:drop": "mongo smrTest --eval \"db.dropDatabase()\"",
+    "start": "node lib/app.js",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "export NODE_ENV=test && npm run db:test:drop && npm run test-with-coverage",
+    "posttest": "istanbul check-coverage --statements 90 --branches 75 --functions 90 --lines 90",
+    "test-with-coverage": "istanbul cover --print both ./node_modules/mocha/bin/_mocha -- test --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfilho/learning-exercises.git"
+  },
+  "keywords": [
+    "koa.js",
+    "mongodb",
+    "music",
+    "recommendation"
+  ],
+  "author": "Luiz Gonzaga dos Santos Filho <lfilho@gmail.com> (http://luiz.in/cv)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lfilho/learning-exercises/issues"
+  },
+  "homepage": "https://github.com/lfilho/learning-exercises/master/music-recomendations",
+  "dependencies": {
+    "async": "^1.4.2",
+    "co-body": "^4.0.0",
+    "koa": "^1.1.1",
+    "koa-router": "^5.2.3",
+    "lodash": "^3.10.1",
+    "mongodb": "^2.0.46",
+    "monk": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "eslint": "^1.7.2",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=4"
+  }
+}
