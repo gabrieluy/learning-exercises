@@ -1,0 +1,12 @@
+<fieldset class="players">
+  <legend>Player mode</legend>
+  <a href="#!/<%= mode %>/human-vs-cpu" class="human-vs-cpu btn <%= player1 == 'human' ? 'btn-info' : '' %>">Human x CPU</a>
+  <a href="#!/<%= mode %>/cpu-vs-cpu" class="cpu-vs-cpu btn <%= player1 == 'cpu' ? 'btn-info' : '' %>">CPU x CPU</a>
+  <% console.log(player1, mode) %>
+</fieldset>
+
+<fieldset class="game-modes">
+  <legend>Game mode</legend>
+  <a href="#!/traditional/<%= player1 %>-vs-cpu" class="traditional btn <%= mode == 'traditional' ? 'btn-info' : '' %>">Traditional</a>
+  <a href="#!/lizard-spock/<%= player1 %>-vs-cpu" class="lizard-spock btn <%= mode == 'lizard-spock' ? 'btn-info' : '' %>">Lizard-Spock</a>
+</fieldset>

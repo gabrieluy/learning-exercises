@@ -12,6 +12,11 @@ This is a repo with playground projects. Here are them with some buzzwords used 
 ### [Simple Note Taking](./note-taking)
 
 - **Programming type**: `Browser` (Frontend only)
-- **Tech used**: `Backbone.js`, `Marionette`, `LocalStorage`, `Browserify`, `LiveReload`, `Foundation`, `Casper.js`, `Grunt`, `JS Hint`
+- **Tech used**: `Backbone.js`, `Marionette`, `LocalStorage`, `Browserify`, `LiveReload`, `Foundation CSS Framework`, `Casper.js`, `Grunt`, `JS Hint`
 - **Last touched on**: Sep 2014
 
+### [Rock Paper Scissors Game](./rock-paper-scissors)
+
+- **Programming type**: `Browser` (Frontend only)
+- **Tech used**: `Backbone.js`, `Jasmine`, `Require.js`, `Twitter Bootstrap`
+- **Last touched on**: Dec 2012
