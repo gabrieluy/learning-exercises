@@ -9,6 +9,12 @@ This is a repo with playground projects. Here are them with some buzzwords used 
 - **Tech used**: `MongoDB`, `Monk`, `Promises`, `Koa.js`, `Node 4 (ES 2015 features)`, `Mocha`, `Supertest`, `Istanbul`, `Chai`, `Sinon`, `ES Lint`
 - **Last touched on**: Oct 2015
 
+### [Tessel](./tessel)
+
+- **Programming type**: `Node.js` (IoT / Microcontroller - Tessel)
+- **Tech used**: `Tessel` (v1)
+- **Last touched on**: Oct 2015
+
 ### [Simple Note Taking](./note-taking)
 
 - **Programming type**: `Browser` (Frontend only)

@@ -1,0 +1,32 @@
+{
+  "name": "sleeping-talky",
+  "version": "0.0.1",
+  "description": "A Tessel module to record what my GF sleep-talks at night :-)",
+  "main": "index.js",
+  "dependencies": {
+    "ambient-attx4": "^0.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/lfilho/sleeping-talky"
+  },
+  "keywords": [
+    "tessel",
+    "iot",
+    "javascript",
+    "ambient",
+    "sound",
+    "sleep",
+    "sleep-talking"
+  ],
+  "author": "Luiz Gonzaga dos Santos Filho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lfilho/sleeping-talky/issues"
+  },
+  "homepage": "https://github.com/lfilho/sleeping-talky"
+}

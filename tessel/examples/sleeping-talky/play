@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# USAGE:
+# ./play 2015-06-07
+# ./play yesterday
+# ./play today
+
+reset=$(tput sgr0)
+bold=$(tput bold)
+
+folder=$1
+
+if [ "$1" == "" ] || [ "$1" == "yesterday" ]; then
+    # Get yesterday's date:
+    folder=`date -v-1d +%F`
+elif [ "$1" == "today" ]; then
+    # Get today's date:
+    folder=`date +%F`
+fi
+
+files=(`ls ./output/$folder/*.mp3`)
+filesLength=${#files[@]}
+
+printf "${reset}${bold}▶️  Recordings from $folder (%0.1f secs in total):\n${reset}" `soxi -T -D output/$folder/*.mp3`
+
+for (( i=0; i<${filesLength}; i++ )); do
+    file=${files[$i]}
+    printf "   - Playing audio $((1 + i)) of $filesLength [%0.1f secs]\n" `soxi -D $file`
+    play "$file" &> /dev/null
+done
+

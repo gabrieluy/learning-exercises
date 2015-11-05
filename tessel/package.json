@@ -1,0 +1,24 @@
+{
+  "name": "tessel-palestra",
+  "version": "1.0.0",
+  "description": "Breve palestra sobre funcionalidades básicas do Tessel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tessel",
+    "js",
+    "iot",
+    "javascript"
+  ],
+  "author": "Luiz Gonzaga dos Santos Filho",
+  "license": "ISC",
+  "dependencies": {
+    "accel-mma84": "^0.2.4",
+    "ambient-attx4": "^0.2.5",
+    "camera-vc0706": "^0.1.8",
+    "climate-si7020": "^0.1.1",
+    "servo-pca9685": "^0.1.3"
+  }
+}

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# USAGE:
+# ./rec
+
+# Initializations:
+reset=$(tput sgr0)
+bold=$(tput bold)
+today=`date +%F`
+todayDir="output/$today"
+
+clean_tiny_files() {
+    # Delete files with less than 1kb (likely to be files corrupted by SIGTERM)
+    find . -name "*.mp3" -size -1k -delete
+}
+
+ctrl_c() {
+    clean_tiny_files
+    printf "\n${reset}🔳  Stop recording."
+    printf "\n\n${bold}☀️  Good morning! ☀️ "
+    printf "\nI hope you had a nice night of sleep! zzZZzzZZzzZ 😴 ${reset}"
+    printf "\n\nYour recordings can be found at $todayDir/."
+    printf "\nShall we have some fun with what happened last night?"
+    printf "\nPlay them using the play script: ${bold}./play $today${reset}\n"
+    exit $?
+}
+trap ctrl_c SIGINT
+
+# Create directory for today's date:
+mkdir -p $todayDir
+
+printf "\n${reset}${bold}🔴  Recording${reset}\n\n"
+
+# Records a stream and splits in to multiple files at points with 2 sec of silence.
+# It does not start recording until it detects noise.
+# To stop, we have to hit ctrl-c
+# TODO: ability of specifying a due time to stop recording (i.e. "alarm clock")
+#     - Maybe: pgrep -P $$ rec
+#     - Maybe: rec ... & ; echo $!
+rec -r 44100 -b 16 -e signed-integer -p \
+    silence 1 0.20 0.1% | \
+    sox -p $todayDir/sleeping_talky_.mp3 silence 1 0.20 0.1% 1 0.20 0.1% : \
+    newfile : restart
