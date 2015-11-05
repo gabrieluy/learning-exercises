@@ -5,5 +5,10 @@ This is a repo with playground projects. Here are them with some buzzwords used 
 
 ### [Simple Music Recomendations](./music-recomendations)
 
-- **Programming type**: Node.js (Backend only)
-- **Tech used**: `MongoDB`, `Monk`, `Promises`, `Koa.js`, `Node 4 (ES 2015 features)`, `Mocha`, `Supertest`, `Istanbul`, `Chai`, `Sinon`, `ESLint`
+- **Programming type**: `Node.js` (Backend only)
+- **Tech used**: `MongoDB`, `Monk`, `Promises`, `Koa.js`, `Node 4 (ES 2015 features)`, `Mocha`, `Supertest`, `Istanbul`, `Chai`, `Sinon`, `ES Lint`
+
+### [Simple Note Taking](./note-taking)
+
+- **Programming type**: `Browser` (Frontend only)
+- **Tech used**: `Backbone.js`, `Marionette`, `LocalStorage`, `Browserify`, `LiveReload`, `Foundation`, `Casper.js`, `Grunt`, `JS Hint`
