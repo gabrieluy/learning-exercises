@@ -3,6 +3,12 @@ Learning Exercises
 
 This is a repo with playground projects. Here are them with some buzzwords used in each one of them:
 
+### [TODO List data traverser](./todo-list-data-traverser)
+
+- **Programming type**: `Node.js` (Backend only)
+- **Tech used**: `Promises`, `Node 5`, `Mocha`, `Istanbul`, `Chai`, `Sinon`, `ES Lint`
+- **Last worked on**: Nov 2015
+
 ### [Simple Music Recomendations](./music-recomendations)
 
 - **Programming type**: `Node.js` (Backend only)
@@ -26,3 +32,4 @@ This is a repo with playground projects. Here are them with some buzzwords used 
 - **Programming type**: `Browser` (Frontend only)
 - **Tech used**: `Backbone.js`, `Jasmine`, `Require.js`, `Twitter Bootstrap`
 - **Last worked on**: Dec 2012
+

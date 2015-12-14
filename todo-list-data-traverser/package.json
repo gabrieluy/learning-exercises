@@ -1,0 +1,24 @@
+{
+  "name": "data-reader",
+  "version": "0.0.1",
+  "description": "A simple data tranversing exercise using plain node",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "istanbul cover --print both ./node_modules/mocha/bin/_mocha -- test --recursive",
+    "posttest": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
+  },
+  "author": "Luiz Gonzaga dos Santos Filho",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "eslint": "^1.9.0",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=5"
+  }
+}
